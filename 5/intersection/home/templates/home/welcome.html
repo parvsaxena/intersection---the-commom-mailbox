@@ -1,0 +1,6 @@
+<h1>WELCOME {{ name }} </h1>
+<form action="{% url 'home:auth'  %}" method="post">
+{% csrf_token %}
+    <input type="text" name="uname">
+    <button type="submit">Submit</button>
+</form>

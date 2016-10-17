@@ -1,0 +1,49 @@
+<!doctype html>
+{% load static %}
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Mail Box</title>
+    <link href="{% static 'home/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href ="{% static 'home/css/custom.css' %}" rel="stylesheet">
+    <script src= "{% static 'home/js/respond.min.js' %}"</script>
+
+</head>
+
+<body>
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    	<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+        <h1 style="color:white;">Common Mail Com</h1>
+    	<h2 style="color:white;">Login Page</h2>
+
+<form action="{% url 'home:login'  %}" method="post">
+    {% csrf_token %}
+
+  <div class="container">
+    <label><b>Email ID</b></label><br>
+    <input class="form-control" type="text" placeholder="Enter Email Id" name="uname" required><br>
+
+    <label><b>Password</b></label><br>
+    <input class="form-control" type="password" placeholder="Enter Password" name="psw" required><br>
+
+    <button class="btn btn-success" type="submit">Login</button><br>
+    <input type="checkbox" checked="checked"> Remember me
+
+  </div>
+</form>
+
+<form action="{% url 'home:signup' %}" method="post">
+    {% csrf_token %}
+<div class="container">
+<label><b>Dont't have an account yet??</b></label>
+<br><button class="btn btn-primary" type="submit">Sign Up</button><br>
+</div>
+</form>
+
+
+</body>
+</html>
